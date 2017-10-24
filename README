@@ -1,0 +1,24 @@
+Implementing a file system for saving and sharing files in the network.
+
+There are 2 entities involved:
+- the server: ./server <port_server> <users_config_file> <static_shares_config_file> 
+- the client: ./client <IP_server> <port_server>
+
+<users_config_file> users that are in the system
+<static_shares_config_file> files shared by the users
+
+The communication is made via TCP.
+
+The client can request different commands:
+- login <name> <password>
+- logout
+- getuserlist
+- getfilelist <user_name>
+- upload <file>
+- download <user_name> <file>
+- share <file>
+- unshare <file>
+- delete <file>
+- quit (this ends the session)
+
+The server can request just the quit command
